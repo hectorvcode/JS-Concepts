@@ -6,7 +6,7 @@
 
 const age = 20;
 
-if (age >= 18 && age <= 15) {
+if (age >= 18 && age <= 25) {
   console.log("18%");
 } else if (age >= 26 && age <= 40) {
   console.log("20%");
