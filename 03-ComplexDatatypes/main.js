@@ -35,7 +35,14 @@ console.log(arreglo[4].key);
 console.log(arreglo.length);
 
 //Complex Datatypes: A variable assigned to an object stores not hte object itself but its "address in memory" - in other words "a reference" to it
+
 let a = 5;
 let b = a;
 a = 7;
 console.log(a, b);
+
+let arr = [1, 2, 3];
+let arr2 = arr;
+arr[0] = 10;
+console.log(arr[0]);
+console.log(arr2[0]);
