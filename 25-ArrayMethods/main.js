@@ -133,3 +133,94 @@ console.log(`Reverse array: [${animalsReverse}]`);
  * sort()
  */
 
+const arrayOfNumbers = [2, 82, 4, 90, 9];
+/* const sortedArray = arrayOfNumbers.sort();
+console.log(`Initial array: [${arrayOfNumbers}]`);
+console.log(`Sorted array: [${sortedArray}]`); */
+
+//Asc
+const sortedArray1 = arrayOfNumbers.sort((a, b) => a - b);
+console.log(`Sorted Arr: [${sortedArray1}]`);
+
+//Desc
+const sortedArray2 = arrayOfNumbers.sort((a, b) => b - a);
+console.log(`Sorted Arr: [${sortedArray2}]`);
+
+const arrayOfNumbs = ["mango", "bananas", "pears", "oranges", "apples"];
+const sortedArr = arrayOfNumbs.sort();
+console.log(`Sorted arr: [${sortedArr}]`);
+
+/**
+ * map()
+ */
+
+const arrayOfNumbers2 = [1, 5, 6, 2, 15];
+const arrayOfMultipliedNumbers = [];
+arrayOfNumbers2.forEach((currentNumber) =>
+  arrayOfMultipliedNumbers.push(currentNumber * 2)
+);
+console.log(arrayOfMultipliedNumbers);
+
+//Shorter using map
+const arrayOfNumbers3 = [1, 5, 6, 2, 15];
+const arrayOfMultipliedNumbers2 = arrayOfNumbers3.map(
+  (currentNumber) => currentNumber * 2
+);
+console.log(arrayOfMultipliedNumbers2);
+
+/**
+ * every()
+ */
+
+const arrayOfNames = ["John", "Jack", "Jodie", "Jane"];
+const containJ = arrayOfNames.every((name) => name.includes("J"));
+const containN = arrayOfNames.every((name) => name.includes("N"));
+
+console.log(`Do all names in the array contain letter "J": ${containJ}`);
+console.log(`Do all names in the array contain letter "N": ${containN}`);
+
+/**
+ * filter()
+ */
+
+const arrayOfNumbers4 = [1, 5, 2, 63, 11, 42];
+const arrayOfEvenNumbers = arrayOfNumbers4.filter(
+  (currentNumber) => currentNumber % 2 === 0
+);
+console.log(arrayOfEvenNumbers);
+
+/**
+ * find()
+ */
+
+const arrayOfNumbers5 = [2, 32, 5, 63, 11, 138, 194];
+const numberAbove42 = arrayOfNumbers5.find((number) => number > 42);
+console.log(numberAbove42);
+
+/**
+ * some()
+ */
+
+const arrayOfNumber = [4, 16, "52", 2, 32, "123"];
+const containsString = arrayOfNumber.some(
+  (number) => typeof number === "string"
+);
+console.log(containsString);
+
+/**
+ * reduce()
+ */
+
+const arrayOfNumbers6 = [2, 8, 1, 50, 31, 25, 9];
+
+const sum = arrayOfNumbers6.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+});
+console.log(sum);
+
+const arrayOfNumbers7 = [2, 8, 1, 50, 31, 25, 9];
+
+const sum2 = arrayOfNumbers7.reduce((accumulator, currentValue) => {
+  return accumulator + currentValue;
+}, 10);
+console.log(sum2);
