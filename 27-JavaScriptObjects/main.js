@@ -1,20 +1,11 @@
 const john = {
   name: "John",
   age: 25,
+  getOlder() {
+    this.age++;
+  },
 };
 
-console.log(john);
-
-//dot notation
-console.log(john.name);
-
-//bracket notation
-console.log(john["age"]);
-
-//add property
-john.language = "JS";
-console.log(john);
-
-//remove property
-delete john.age;
+john.getOlder();
+john.getOlder();
 console.log(john);
