@@ -37,9 +37,9 @@ const readFilePromise = new Promise((resolve, reject) => {
   });
 });
 
-readFilePromise.then((data) => {
+/* readFilePromise.then((data) => {
   console.log(data);
-});
+}); */
 
 const fulfilled = Promise.resolve(42);
 fulfilled.then((data) => {
