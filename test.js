@@ -1,13 +1,33 @@
-function truncateString(str, num) {
-  let truncatedStr = str.substring(0, num);
-  if (num < str.length) {
-    let result = truncatedStr + "...";
-    return result;
-  }
-  return truncatedStr;
+function firstPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Promises"), 50);
+  });
 }
 
-console.log(truncateString("This is a long string", 6)); // 'This i...'
-console.log(truncateString("This", 6)); // 'This'
-console.log(truncateString("The longest string", 6)); // 'This'
-console.log(truncateString("eye", 3)); // 'This'
+function secondPromise() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve("chained"), 40);
+  });
+}
+
+function promisesChaining() {
+  let chainingResult = "";
+
+  //PLACE YOUR CODE BETWEEN THIS LINE:
+  firstPromise()
+    .then((result) => {
+      chainingResult = result;
+      return secondPromise();
+    })
+    .then((result) => {
+      chainingResult = `${chainingResult} ${result}`;
+      console.log(chainingResult);
+      return chainingResult;
+      console.log(chainingResult, typeof chainingResult); // "Promises chained"
+    })
+    .catch((err) => {
+      return err;
+    }); //AND THIS ONE
+}
+
+promisesChaining();

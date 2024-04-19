@@ -19,7 +19,7 @@ function secondAsyncOperation(number) {
 }
 
 //Chaining the two promises
-firstAsuncOperation()
+firstAsyncOperation()
   .then((result) => {
     return secondAsyncOperation(result);
   })
